@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+*{
+    font-family: "Playfair Display",sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: block;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    font-family:cursive;
+    background:#0e172c;
+}
+.bod{
+    margin-top: 10%;
+    margin-left: 30%;
+    text-align: center;
+    justify-content: center;
+
+}
+input{
+    display: none;
+}
+img{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #000;
+}
+
+.book{
+    display: flex;
+}
+#cover{
+    width: 300px;
+    height:500px;
+    
+}
+.flip-book{
+    width: 300px;
+    height: 500px;
+    position: relative;
+    perspective: 1500px;
+}
+.flip{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+    transition: .5s;
+    color: #000;
+}
+p{
+  font-size: 12px;
+  line-height: 24px;
+  
+}
+.front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #0e172c;
+    background-color: #d9d4e7;
+    box-sizing: border-box;
+    padding: 0 13px;
+    box-shadow: inset 20px 0 50px rgba(0, 0,0,0.5px) 0 2px 5px rgba(0, 0,0,0.5) ;
+}
+.back p {
+    padding: 10px;
+}
+.back{
+    position: absolute;
+    border: 2px solid;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    background:#d9d4e7;
+    
+}
+.next-btn{
+    position: absolute ;
+    background-color: #a786df;
+    padding: 10px;
+    bottom: 13px;
+    right: 13px;
+    cursor: pointer;
+    color: #d9d4e7;
+}
+.back-btn{
+    position: absolute;
+    background-color: #a786df;
+    padding: 10px;
+    bottom: 13px;
+    right: 13px;
+    cursor: pointer;
+    color: #d9d4e7;
+}
+#p1{
+    z-index: 7;
+}
+#p2{
+    z-index: 6;
+}
+#p3{
+    z-index: 5;
+}
+#p4{
+    z-index: 4;
+}
+#p5{
+    z-index: 3;
+}
+#p6{
+    z-index: 2;
+}
+#p7{
+    z-index: 1;
+}
+#c1:checked ~ .flip-book #p1{
+    transform: rotateY(-180deg);
+    z-index: 1;
+}
+#c2:checked ~ .flip-book #p2{
+    transform: rotateY(-180deg);
+    z-index: 2;
+}
+#c3:checked ~ .flip-book #p3{
+    transform: rotateY(-180deg);
+    z-index: 3;
+}
+#c4:checked ~ .flip-book #p4{
+    transform: rotateY(-180deg);
+    z-index: 4;
+}
+#c5:checked ~ .flip-book #p5{
+    transform: rotateY(-180deg);
+    z-index: 5;
+}
+#c6:checked ~ .flip-book #p6{
+    transform: rotateY(-180deg);
+    z-index: 6;
+}
+#c7:checked ~ .flip-book #p7{
+    transform: rotateY(-180deg);
+    z-index: 7;
+}
+
+@media (max-width : 499px) {
+    .book {
+        width:100%;
+       
+    }
+    .bod {
+        margin-top: 15%;
+        margin-left: 10%;
+        margin-right: 3%;
+        text-align: center;
+        justify-content: center;
+    }
+    .flip-book {
+        width: 300px;
+        height: 600px;
+        position: relative;
+        perspective: 1500px;
+    }
+    p {
+        font-size: 10px;
+        line-height: 13px;
+    }
+    #cover {
+        width: 300px;
+        height: 600px;
+    }
+}

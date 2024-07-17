@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Contract</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body style="background-color: #fffffe;">
+    <head>
+        <a href="wel.html"><h1>Home</h1></a>
+    </head>
+    <div class="main">
+        <h1>Contract</h1>
+        <div class="arg">
+           <div class="sen">
+            <p>This Love Contract ("Contract") is entered into on
+                17th July 2024, between Swati Singh, hereinafter 
+                referred to as "Partner 1," and Savtik Dubey(Jaan),
+                 hereinafter referred to as "Partner 2."</p>
+       
+               <STRong>Commitment to Each Other</STRong>
+               <p>
+                Both parties agree to commit to the relationship wholeheartedly, supporting and caring for each other emotionally, mentally, and physically.
+                (Chahye mai kitni bhi pglpnti kro tb bhi tumhe mere sth committed rhna h ha agr 
+                meri pglpnti psnd na aaye to bta dena bnd kr dogi)
+               </p>
+               <STRong>Communication</STRong>
+               <p>Both parties agree to communicate openly and honestly, expressing feelings and concerns respectfully
+                (Hum dono ek dosre se kuch ni chuppayege aur aj se koi exception bhi ni rhege  ki is bt me exception h .)
+               </p>
+               <strong>Time Together</strong>
+               <p>Both parties agree to prioritize quality time together and respect each other's personal space and individual interests.
+                (hum dono hemsa time spend krege aur partner 1 ko to koi personal space ni chahie ha kbhi partner 2 ko chahie hogi isliye ye line bhi added h  )
+
+               </p>
+               <strong>Mutual Respect</strong>
+               <p>Both parties agree to treat each other with kindness, empathy, and respect at all times, both in private and in public.
+                (respect to boht hogi pr mera hk mai tumhe marna to wo to mai marogi)
+               </p>
+               <strong>Trust and Loyalty</strong>
+               <p>Both parties agree to be loyal and trustworthy, maintaining faithfulness and honesty in the relationship.
+                (Bki sb to important h but ye very very very very very important h agr kbhi cheat krne ka socha bhi na to murder kr 
+                dogi tumhara . Haa kbhi esa lge ki muhjse ab pyaar ni krte ho to muhje phle hi bta dena )
+               </p>
+               <strong>Conflict Resolution</strong>
+               <p>Both parties agree to handle conflicts maturely and constructively, striving to find mutually agreeable solutions.
+                (kbhi humari ldai hoi to tumhe hi muhje mna pdega . {wese to ik iska utla mainly hoga but koi ni } kyuki mai ldki hu to tumhe hi mna pdega 
+                smjha.)
+               </p>
+               <strong>Future Plans</strong>
+               <p>Partner A and Partner B will discuss and plan their future together, including dreams and aspirations such as travel goals, career ambitions, and potential life milestones.
+                (AUR marriage ka bhi agr apka mn ho.)
+               </p>
+               <strong>Termination of Contract</strong>
+               <p>Either Partner A or Partner B may terminate this Contract at any time by mutual agreement or by providing notice to the other party.
+                (But ig terminate to hoga ni kyuki hum log brkup ni krege but ye terminate tbhi hoga jb hum brkup krege)
+               </p> 
+           </div>
+           <div class="sign">
+                <div class="PA">
+                    <h6>Parter 1</h6>
+                    <img src="sign.png" alt="" height="100px">
+                </div>
+                <div class="PA">
+                <h6>Parter 2</h6>
+                <CAnvas id="canvas"></CAnvas>
+                </div>
+                <button onclick="clearCanvas()">Clear</button>
+                
+           </div>
+           <button type="submit" onclick="window.print()" style="margin: 5px; padding: 5px; background-color: #fec7d7; border: none; color:#f9f8fc ;">Print</button>
+        </div>
+       
+    </div>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        // Variables to track the mouse movements
+        let isDrawing = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        // Event listeners to track mouse movements
+        canvas.addEventListener('mousedown', startDrawing);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseup', endDrawing);
+        canvas.addEventListener('mouseout', endDrawing);
+
+        // Function to start drawing
+        function startDrawing(e) {
+            isDrawing = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        // Function to draw on the canvas
+        function draw(e) {
+            if (!isDrawing) return;
+            ctx.strokeStyle = '#000'; // Black color
+            ctx.lineWidth = 2;
+            ctx.lineCap = 'round';
+
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+        }
+
+        // Function to end drawing
+        function endDrawing() {
+            isDrawing = false;
+        }
+
+        // Function to clear the canvas
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    </script> 
+        
+
+   
+</body>
+</html>
